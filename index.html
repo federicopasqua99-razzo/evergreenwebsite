@@ -4,22 +4,8 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="theme-color" content="#F5F2E9">
-  <meta name="description" content="Evergreen Brandizzo — pizzeria, ristorante e bar. Scopri il menù, i servizi e come raggiungerci.">
-  <title>Evergreen Brandizzo — Pizza, cucina e good times</title>
-
-  <!--
-    EVERGREEN BRANDIZZO — VERSIONE 1
-    Prima bozza completa e responsive.
-
-    PRIMA DELLA PUBBLICAZIONE:
-    1. Sostituire i testi provvisori e confermare lo slogan con la famiglia.
-    2. Inserire fotografie autorizzate nella cartella assets/ e aggiornare i percorsi.
-    3. Aggiornare il menù, gli orari, il telefono e i link social/Google.
-    4. Verificare indirizzo, modalità di prenotazione, asporto e consegna.
-    5. Collegare il dominio solo dopo averlo acquistato e verificato.
-    6. Aggiungere privacy/cookie policy e gli eventuali strumenti di consenso necessari
-       in base ai servizi effettivamente installati.
-  -->
+  <meta name="description" content="Evergreen Brandizzo — pizzeria, ristorante e bar.">
+  <title>Evergreen Brandizzo</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -39,7 +25,12 @@
     }
 
     * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 90px;
+    }
+
     body {
       margin: 0;
       background: var(--paper);
@@ -48,472 +39,1538 @@
       line-height: 1.55;
       -webkit-font-smoothing: antialiased;
     }
-    body.menu-open { overflow: hidden; }
-    img { display: block; max-width: 100%; }
-    a { color: inherit; text-decoration: none; }
-    button, a { -webkit-tap-highlight-color: transparent; }
-    button { font: inherit; }
-    ::selection { background: var(--green); color: var(--ink); }
 
-    .wrap { width: min(100% - 2 * var(--gutter), var(--max-width)); margin-inline: auto; }
+    body.menu-open { overflow: hidden; }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, a {
+      -webkit-tap-highlight-color: transparent;
+    }
+
+    button {
+      font: inherit;
+    }
+
+    ::selection {
+      background: var(--green);
+      color: var(--ink);
+    }
+
+    .wrap {
+      width: min(100% - 2 * var(--gutter), var(--max-width));
+      margin-inline: auto;
+    }
+
     .eyebrow {
-      display: flex; align-items: center; gap: .65rem;
-      margin: 0 0 1rem; font-size: .72rem; font-weight: 800;
-      letter-spacing: .14em; text-transform: uppercase;
+      display: flex;
+      align-items: center;
+      gap: .65rem;
+      margin: 0 0 1rem;
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .14em;
+      text-transform: uppercase;
     }
-    .eyebrow::before { content: ""; width: 1.8rem; height: 3px; background: var(--green); }
-    .section { padding-block: clamp(4.5rem, 9vw, 8rem); }
+
+    .eyebrow::before {
+      content: "";
+      width: 1.8rem;
+      height: 3px;
+      background: var(--green);
+    }
+
+    .section {
+      padding-block: clamp(4.5rem, 9vw, 8rem);
+    }
+
     .section-head {
-      display: flex; align-items: end; justify-content: space-between;
-      gap: 2rem; margin-bottom: clamp(2rem, 5vw, 3.5rem);
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 2rem;
+      margin-bottom: clamp(2rem, 5vw, 3.5rem);
     }
-    h1, h2, h3, p { margin-top: 0; }
+
+    h1, h2, h3, p {
+      margin-top: 0;
+    }
+
     h1, h2, h3, .brand, .display {
       font-family: "Space Grotesk", sans-serif;
       letter-spacing: -.055em;
     }
+
     h2 {
-      max-width: 850px; margin-bottom: 0;
+      max-width: 850px;
+      margin-bottom: 0;
       font-size: clamp(2.6rem, 7vw, 6.5rem);
-      line-height: .94; text-transform: uppercase;
+      line-height: .94;
+      text-transform: uppercase;
     }
-    .lead { max-width: 520px; color: var(--muted); font-size: clamp(1rem, 1.5vw, 1.18rem); }
-    .green-text { color: #6C8D1D; }
+
+    .green-text {
+      color: #6C8D1D;
+    }
+
     .button {
-      display: inline-flex; align-items: center; justify-content: center; gap: .7rem;
-      min-height: 52px; padding: .9rem 1.25rem; border: 1.5px solid var(--ink);
-      border-radius: 8px; background: transparent; color: var(--ink);
-      font-size: .78rem; font-weight: 800; letter-spacing: .045em; text-transform: uppercase;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: .7rem;
+      min-height: 52px;
+      padding: .9rem 1.25rem;
+      border: 1.5px solid var(--ink);
+      border-radius: 8px;
+      background: transparent;
+      color: var(--ink);
+      font-size: .78rem;
+      font-weight: 800;
+      letter-spacing: .045em;
+      text-transform: uppercase;
       transition: transform .2s ease, background .2s ease, color .2s ease;
       cursor: pointer;
     }
-    .button:hover { transform: translateY(-3px); }
-    .button-primary { background: var(--green); border-color: var(--green); }
-    .button-primary:hover { background: var(--ink); color: var(--paper); border-color: var(--ink); }
-    .button-dark { background: var(--ink); color: var(--paper); }
-    .button-dark:hover { background: var(--green); border-color: var(--green); color: var(--ink); }
-    .arrow { font-size: 1.15rem; line-height: 1; }
+
+    .button:hover {
+      transform: translateY(-3px);
+    }
+
+    .button-primary {
+      background: var(--green);
+      border-color: var(--green);
+    }
+
+    .button-primary:hover {
+      background: var(--ink);
+      color: var(--paper);
+      border-color: var(--ink);
+    }
+
+    .button-dark {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .button-dark:hover {
+      background: var(--green);
+      border-color: var(--green);
+      color: var(--ink);
+    }
+
+    .arrow {
+      font-size: 1.15rem;
+      line-height: 1;
+    }
 
     /* Header */
+
     .site-header {
-      position: sticky; top: 0; z-index: 50;
-      background: rgba(245, 242, 233, .94); backdrop-filter: blur(14px);
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      background: rgba(245, 242, 233, .94);
+      backdrop-filter: blur(14px);
       border-bottom: 1px solid var(--line);
     }
+
     .nav {
-      min-height: 78px; display: flex; align-items: center; justify-content: space-between; gap: 2rem;
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
     }
-    .brand { font-size: clamp(1.55rem, 3vw, 2.15rem); font-weight: 700; line-height: 1; }
-    .brand sup { font-family: "DM Sans", sans-serif; font-size: .55rem; letter-spacing: 0; vertical-align: top; }
-    .nav-links { display: flex; align-items: center; gap: clamp(1rem, 2.5vw, 2.2rem); }
+
+    .brand {
+      font-size: clamp(1.55rem, 3vw, 2.15rem);
+      font-weight: 700;
+      line-height: 1;
+    }
+
+    .brand sup {
+      font-family: "DM Sans", sans-serif;
+      font-size: .55rem;
+      letter-spacing: 0;
+      vertical-align: top;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: clamp(1rem, 2.5vw, 2.2rem);
+    }
+
     .nav-links a {
-      font-size: .75rem; font-weight: 800; text-transform: uppercase; letter-spacing: .04em;
+      font-size: .75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .04em;
       transition: color .2s ease;
     }
-    .nav-links a:hover { color: #6C8D1D; }
-    .nav-cta { min-height: 43px; padding: .65rem 1rem; background: var(--green); border-color: var(--green); }
+
+    .nav-links a:hover {
+      color: #6C8D1D;
+    }
+
+    .nav-cta {
+      min-height: 43px;
+      padding: .65rem 1rem;
+      background: var(--green);
+      border-color: var(--green);
+    }
+
     .menu-toggle {
-      display: none; width: 46px; height: 46px; border: 1px solid var(--ink);
-      border-radius: 8px; background: transparent; color: var(--ink); cursor: pointer;
+      display: none;
+      width: 46px;
+      height: 46px;
+      border: 1px solid var(--ink);
+      border-radius: 8px;
+      background: transparent;
+      color: var(--ink);
+      cursor: pointer;
       font-size: 1.35rem;
     }
 
     /* Hero */
-    .hero { padding-block: clamp(2.7rem, 6vw, 5.5rem) 4rem; overflow: hidden; }
-    .hero-top { display: flex; align-items: center; justify-content: space-between; gap: 1rem; margin-bottom: 1.6rem; }
-    .hero-top p { margin: 0; font-size: .72rem; font-weight: 800; letter-spacing: .13em; text-transform: uppercase; }
-    .hero-top .location { display: flex; align-items: center; gap: .55rem; }
-    .dot { width: 9px; height: 9px; border-radius: 50%; background: var(--green); box-shadow: 0 0 0 4px rgba(184,230,46,.2); }
+
+    .hero {
+      padding-block: clamp(2.7rem, 6vw, 5.5rem) 4rem;
+      overflow: hidden;
+    }
+
+    .hero-top {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 1rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .hero-top p {
+      margin: 0;
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .hero-top .location {
+      display: flex;
+      align-items: center;
+      gap: .55rem;
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--green);
+      box-shadow: 0 0 0 4px rgba(184,230,46,.2);
+    }
+
     .hero-title {
-      position: relative; z-index: 2; max-width: 1150px; margin: 0 0 2rem;
-      font-size: clamp(3.2rem, 10.5vw, 10rem); line-height: .82;
-      font-weight: 700; text-transform: uppercase;
+      position: relative;
+      z-index: 2;
+      max-width: 1150px;
+      margin: 0 0 2rem;
+      font-size: clamp(3.2rem, 10.5vw, 10rem);
+      line-height: .82;
+      font-weight: 700;
+      text-transform: uppercase;
     }
-    .hero-title span { display: block; }
-    .hero-title .accent { color: #6C8D1D; }
-    .hero-bottom { display: grid; grid-template-columns: 1fr auto; align-items: end; gap: 2rem; margin-bottom: 2.4rem; }
-    .hero-copy { max-width: 490px; margin: 0; color: var(--muted); font-size: clamp(1.05rem, 1.8vw, 1.35rem); }
-    .hero-actions { display: flex; flex-wrap: wrap; gap: .75rem; }
+
+    .hero-title span {
+      display: block;
+    }
+
+    .hero-title .accent {
+      color: #6C8D1D;
+    }
+
+    .hero-bottom {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 2.4rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .75rem;
+    }
+
     .hero-image {
-      position: relative; min-height: 360px; height: min(62vw, 650px);
-      overflow: hidden; border-radius: var(--radius); background: var(--stone);
+      position: relative;
+      min-height: 360px;
+      height: min(62vw, 650px);
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: var(--stone);
     }
-    .hero-image img { width: 100%; height: 100%; object-fit: cover; }
-    .image-note {
-      position: absolute; right: 1rem; bottom: 1rem; padding: .65rem .9rem;
-      background: var(--green); border-radius: 6px; font-size: .68rem;
-      font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
+
+    .hero-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
     }
-    .hero-index { display: flex; justify-content: space-between; gap: 1rem; margin-top: .9rem; }
-    .hero-index span { font-size: .68rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
+
+    .hero-index {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: .9rem;
+    }
+
+    .hero-index span {
+      font-size: .68rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
 
     /* Marquee */
-    .marquee { overflow: hidden; background: var(--green); color: var(--ink); transform: rotate(-1deg) scale(1.02); }
-    .marquee-track {
-      display: flex; width: max-content; gap: 1.8rem; padding: 1.05rem 0;
-      animation: marquee 28s linear infinite;
+
+    .marquee {
+      overflow: hidden;
+      background: var(--green);
+      color: var(--ink);
+      transform: rotate(-1deg) scale(1.02);
     }
-    .marquee-track span { font-family: "Space Grotesk", sans-serif; font-size: clamp(1.2rem, 2.5vw, 2rem); font-weight: 700; text-transform: uppercase; }
-    .marquee-track b { font-size: 1.3em; }
-    @keyframes marquee { to { transform: translateX(-50%); } }
+
+    .marquee-track {
+      display: flex;
+      width: max-content;
+      animation: marquee 28s linear infinite;
+      will-change: transform;
+    }
+
+    .marquee-group {
+      display: flex;
+      align-items: center;
+      gap: 1.8rem;
+      padding: 1.05rem 1.8rem 1.05rem 0;
+      flex-shrink: 0;
+    }
+
+    .marquee-track span {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(1.2rem, 2.5vw, 2rem);
+      font-weight: 700;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .marquee-track b {
+      font-size: 1.3em;
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-50%);
+      }
+    }
 
     /* Menu */
-    .menu-section { background: var(--stone); }
-    .menu-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; }
-    .menu-card {
-      display: flex; min-height: 235px; flex-direction: column; justify-content: space-between;
-      padding: clamp(1.4rem, 3vw, 2.4rem); border: 1px solid var(--line);
-      border-radius: var(--radius); background: var(--paper); transition: background .2s, transform .2s;
+
+    .menu-section {
+      background: var(--stone);
     }
-    .menu-card:hover { background: var(--green); transform: translateY(-4px); }
-    .menu-card .number { font-size: .72rem; font-weight: 800; letter-spacing: .12em; }
-    .menu-card h3 { margin: 1.8rem 0 .55rem; font-size: clamp(1.8rem, 4vw, 3.5rem); line-height: .95; text-transform: uppercase; }
-    .menu-card p { max-width: 390px; margin-bottom: 0; color: var(--muted); }
-    .menu-card:hover p { color: var(--ink); }
-    .menu-foot { display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; margin-top: 2rem; }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+
+    .menu-card {
+      display: flex;
+      min-height: 235px;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: clamp(1.4rem, 3vw, 2.4rem);
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+      transition: background .2s, transform .2s;
+    }
+
+    .menu-card:hover {
+      background: var(--green);
+      transform: translateY(-4px);
+    }
+
+    .menu-card .number {
+      font-size: .72rem;
+      font-weight: 800;
+      letter-spacing: .12em;
+    }
+
+    .menu-card h3 {
+      margin: 1.8rem 0 .55rem;
+      font-size: clamp(1.8rem, 4vw, 3.5rem);
+      line-height: .95;
+      text-transform: uppercase;
+    }
+
+    .menu-card .arrow {
+      align-self: flex-start;
+    }
+
+    .menu-foot {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      gap: 1.5rem;
+      margin-top: 2rem;
+    }
 
     /* About */
-    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 7vw, 7rem); align-items: center; }
-    .about-image { min-height: 420px; overflow: hidden; border-radius: var(--radius); background: var(--stone); }
-    .about-image img { width: 100%; height: 100%; min-height: 420px; object-fit: cover; }
-    .about-copy h2 { margin-bottom: 1.5rem; }
-    .about-copy p { max-width: 540px; color: var(--muted); }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: clamp(2rem, 7vw, 7rem);
+      align-items: center;
+    }
+
+    .about-image {
+      min-height: 420px;
+      overflow: hidden;
+      border-radius: var(--radius);
+      background: var(--stone);
+    }
+
+    .about-image img {
+      width: 100%;
+      height: 100%;
+      min-height: 420px;
+      object-fit: cover;
+    }
+
+    .about-copy h2 {
+      margin-bottom: 1.5rem;
+    }
+
     .about-stamp {
-      display: inline-flex; align-items: center; justify-content: center; width: 112px; height: 112px;
-      margin-top: 1.2rem; border-radius: 50%; background: var(--green);
-      font-family: "Space Grotesk", sans-serif; font-weight: 700; text-align: center;
-      line-height: 1.05; text-transform: uppercase; transform: rotate(-9deg);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 112px;
+      height: 112px;
+      margin-top: 1.2rem;
+      border-radius: 50%;
+      background: var(--green);
+      font-family: "Space Grotesk", sans-serif;
+      font-weight: 700;
+      text-align: center;
+      line-height: 1.05;
+      text-transform: uppercase;
+      transform: rotate(-9deg);
     }
 
     /* Gallery */
-    .gallery-section { background: var(--ink); color: var(--paper); }
-    .gallery-section .lead { color: #C5C6BD; }
-    .gallery-grid { display: grid; grid-template-columns: 1.2fr .8fr 1fr; grid-template-rows: 230px 230px; gap: .8rem; }
-    .gallery-item { overflow: hidden; border-radius: 10px; background: #34372F; }
-    .gallery-item:first-child { grid-row: span 2; }
-    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: transform .5s ease; }
-    .gallery-item:hover img { transform: scale(1.045); }
-    .gallery-caption { display: flex; justify-content: space-between; gap: 1rem; margin-top: 1rem; color: #C5C6BD; font-size: .68rem; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; }
+
+    .gallery-section {
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns: 1.2fr .8fr 1fr;
+      grid-template-rows: 230px 230px;
+      gap: .8rem;
+    }
+
+    .gallery-item {
+      overflow: hidden;
+      border-radius: 10px;
+      background: #34372F;
+    }
+
+    .gallery-item:first-child {
+      grid-row: span 2;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform .5s ease;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.045);
+    }
+
+    .gallery-caption {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 1rem;
+      color: #C5C6BD;
+      font-size: .68rem;
+      font-weight: 700;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
 
     /* Reviews */
-    .reviews-top { display: flex; align-items: center; justify-content: space-between; gap: 2rem; padding: 1.4rem 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
-    .google-mark { display: flex; align-items: center; gap: .8rem; font-size: 1.05rem; font-weight: 800; }
-    .google-mark .g { display: grid; width: 42px; height: 42px; place-items: center; border: 1px solid var(--line); border-radius: 50%; font-size: 1.3rem; }
-    .review-placeholder {
-      margin-top: 1.5rem; padding: clamp(1.5rem, 4vw, 3rem); border-radius: var(--radius);
-      background: var(--stone); display: grid; grid-template-columns: 1fr auto; gap: 2rem; align-items: center;
+
+    .reviews-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 2rem;
+      padding: 1.4rem 0;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
     }
-    .review-placeholder h3 { margin-bottom: .6rem; font-size: clamp(1.6rem, 3vw, 2.5rem); text-transform: uppercase; }
-    .review-placeholder p { max-width: 620px; margin-bottom: 0; color: var(--muted); }
+
+    .google-mark {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      font-size: 1.05rem;
+      font-weight: 800;
+    }
+
+    .google-mark .g {
+      display: grid;
+      width: 42px;
+      height: 42px;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 50%;
+      font-size: 1.3rem;
+    }
+
+    .review-summary {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: 1.25rem;
+      margin-top: 1.5rem;
+      padding: 1.5rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .review-score {
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(2.8rem, 6vw, 5rem);
+      font-weight: 700;
+      line-height: .9;
+    }
+
+    .review-score small {
+      font-size: .45em;
+      letter-spacing: 0;
+    }
+
+    .review-stars {
+      margin-bottom: .25rem;
+      font-size: 1rem;
+      letter-spacing: .12em;
+    }
+
+    .review-meta {
+      color: var(--muted);
+      font-size: .85rem;
+      font-weight: 700;
+    }
+
+    .review-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: .8rem;
+      margin-top: 1rem;
+    }
+
+    .review-card {
+      min-height: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: 1.5rem;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--paper);
+    }
+
+    .review-card .stars {
+      margin-bottom: 1rem;
+      font-size: .8rem;
+      letter-spacing: .08em;
+    }
+
+    .review-card blockquote {
+      margin: 0 0 1.5rem;
+      font-family: "Space Grotesk", sans-serif;
+      font-size: clamp(1.2rem, 2vw, 1.6rem);
+      line-height: 1.15;
+      letter-spacing: -.035em;
+    }
+
+    .review-author {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      font-size: .68rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+
+    .review-author span:last-child {
+      color: var(--muted);
+    }
 
     /* Services */
-    .services-section { background: var(--green); }
-    .services-section .eyebrow::before { background: var(--ink); }
-    .services-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: .75rem; }
-    .service {
-      min-height: 210px; padding: 1.5rem; border: 1px solid rgba(34,37,31,.45);
-      border-radius: var(--radius); display: flex; flex-direction: column; justify-content: space-between;
+
+    .services-section {
+      background: var(--green);
     }
-    .service .service-icon { font-size: 1.7rem; }
-    .service h3 { margin: 1.5rem 0 .35rem; font-size: clamp(1.35rem, 2.2vw, 2rem); text-transform: uppercase; }
-    .service p { margin: 0; font-size: .9rem; }
+
+    .services-section .eyebrow::before {
+      background: var(--ink);
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: .75rem;
+    }
+
+    .service {
+      min-height: 210px;
+      padding: 1.5rem;
+      border: 1px solid rgba(34,37,31,.45);
+      border-radius: var(--radius);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .service .service-icon {
+      font-size: 1.7rem;
+    }
+
+    .service h3 {
+      margin: 1.5rem 0 0;
+      font-size: clamp(1.35rem, 2.2vw, 2rem);
+      text-transform: uppercase;
+    }
 
     /* Contact */
-    .contact-grid { display: grid; grid-template-columns: .9fr 1.1fr; gap: clamp(2rem, 7vw, 7rem); }
-    .contact-copy h2 { margin-bottom: 1.5rem; }
-    .contact-copy > p { max-width: 450px; color: var(--muted); }
-    .contact-list { margin: 2rem 0; border-top: 1px solid var(--line); }
-    .contact-row { display: grid; grid-template-columns: 110px 1fr; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--line); }
-    .contact-row dt { font-size: .7rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; }
-    .contact-row dd { margin: 0; font-weight: 600; overflow-wrap: anywhere; }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: clamp(2rem, 7vw, 7rem);
+    }
+
+    .contact-copy h2 {
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-list {
+      margin: 2rem 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .contact-row {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 1rem;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .contact-row dt {
+      font-size: .7rem;
+      font-weight: 800;
+      letter-spacing: .1em;
+      text-transform: uppercase;
+    }
+
+    .contact-row dd {
+      margin: 0;
+      font-weight: 600;
+      overflow-wrap: anywhere;
+    }
+
+    .contact-row dd a {
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
     .map-panel {
-      min-height: 400px; display: flex; flex-direction: column; justify-content: space-between;
-      padding: clamp(1.5rem, 4vw, 2.5rem); border-radius: var(--radius); background: var(--stone);
+      min-height: 400px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      padding: clamp(1.5rem, 4vw, 2.5rem);
+      border-radius: var(--radius);
+      background: var(--stone);
     }
+
     .map-panel .map-art {
-      display: grid; flex: 1; min-height: 210px; place-items: center; margin-bottom: 2rem;
-      border: 1px dashed rgba(34,37,31,.35); border-radius: 10px;
-      background: repeating-linear-gradient(45deg, transparent, transparent 18px, rgba(34,37,31,.035) 18px, rgba(34,37,31,.035) 36px);
+      display: grid;
+      flex: 1;
+      min-height: 210px;
+      place-items: center;
+      margin-bottom: 2rem;
+      border: 1px dashed rgba(34,37,31,.35);
+      border-radius: 10px;
+      background: repeating-linear-gradient(
+        45deg,
+        transparent,
+        transparent 18px,
+        rgba(34,37,31,.035) 18px,
+        rgba(34,37,31,.035) 36px
+      );
     }
-    .map-pin { display: grid; width: 68px; height: 68px; place-items: center; border-radius: 50% 50% 50% 8px; background: var(--green); font-size: 1.7rem; transform: rotate(-45deg); }
-    .map-pin span { transform: rotate(45deg); }
-    .map-panel h3 { margin-bottom: .5rem; font-size: 2rem; text-transform: uppercase; }
-    .map-panel p { color: var(--muted); }
+
+    .map-pin {
+      display: grid;
+      width: 68px;
+      height: 68px;
+      place-items: center;
+      border-radius: 50% 50% 50% 8px;
+      background: var(--green);
+      font-size: 1.7rem;
+      transform: rotate(-45deg);
+    }
+
+    .map-pin span {
+      transform: rotate(45deg);
+    }
+
+    .map-panel h3 {
+      margin-bottom: .5rem;
+      font-size: 2rem;
+      text-transform: uppercase;
+    }
+
+    .map-panel p {
+      color: var(--muted);
+    }
 
     /* Footer */
-    .footer { padding: 3rem 0 1.5rem; background: var(--ink); color: var(--paper); }
-    .footer-main { display: flex; align-items: start; justify-content: space-between; gap: 3rem; padding-bottom: 3rem; }
-    .footer .brand { display: inline-block; margin-bottom: 1rem; font-size: clamp(2rem, 5vw, 4rem); }
-    .footer p { max-width: 360px; margin-bottom: 0; color: #C5C6BD; }
-    .footer-links { display: flex; flex-wrap: wrap; gap: 1rem 2rem; }
-    .footer-links a { font-size: .75rem; font-weight: 800; text-transform: uppercase; }
-    .footer-links a:hover { color: var(--green); }
-    .footer-bottom { display: flex; justify-content: space-between; gap: 1rem; padding-top: 1.2rem; border-top: 1px solid rgba(245,242,233,.2); color: #C5C6BD; font-size: .7rem; }
+
+    .footer {
+      padding: 3rem 0 1.5rem;
+      background: var(--ink);
+      color: var(--paper);
+    }
+
+    .footer-main {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      gap: 3rem;
+      padding-bottom: 3rem;
+    }
+
+    .footer .brand {
+      display: inline-block;
+      font-size: clamp(2rem, 5vw, 4rem);
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem 2rem;
+    }
+
+    .footer-links a {
+      font-size: .75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+
+    .footer-links a:hover {
+      color: var(--green);
+    }
+
+    .footer-bottom {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid rgba(245,242,233,.2);
+      color: #C5C6BD;
+      font-size: .7rem;
+    }
 
     @media (max-width: 900px) {
       .nav-links {
-        position: fixed; inset: 78px 0 auto; display: none; flex-direction: column; align-items: stretch;
-        gap: 0; padding: 1rem var(--gutter) 1.5rem; background: var(--paper); border-bottom: 1px solid var(--line);
+        position: fixed;
+        inset: 78px 0 auto;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 1rem var(--gutter) 1.5rem;
+        background: var(--paper);
+        border-bottom: 1px solid var(--line);
       }
-      .nav-links.is-open { display: flex; }
-      .nav-links a { padding: 1rem 0; border-bottom: 1px solid var(--line); font-size: .9rem; }
-      .nav-links .nav-cta { margin-top: 1rem; padding: .9rem 1rem; text-align: center; border: 0; }
-      .menu-toggle { display: block; }
-      .hero-bottom { grid-template-columns: 1fr; align-items: start; }
-      .about-grid, .contact-grid { grid-template-columns: 1fr; }
-      .about-image { order: 2; }
-      .services-grid { grid-template-columns: repeat(2, 1fr); }
-      .gallery-grid { grid-template-rows: 190px 190px; }
+
+      .nav-links.is-open {
+        display: flex;
+      }
+
+      .nav-links a {
+        padding: 1rem 0;
+        border-bottom: 1px solid var(--line);
+        font-size: .9rem;
+      }
+
+      .nav-links .nav-cta {
+        margin-top: 1rem;
+        padding: .9rem 1rem;
+        text-align: center;
+        border: 0;
+      }
+
+      .menu-toggle {
+        display: block;
+      }
+
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-image {
+        order: 2;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .gallery-grid {
+        grid-template-rows: 190px 190px;
+      }
+
+      .review-grid {
+        grid-template-columns: 1fr 1fr;
+      }
     }
+
     @media (max-width: 600px) {
-      :root { --gutter: 1.15rem; }
-      .nav { min-height: 70px; }
-      .nav-links { inset-block-start: 70px; }
-      .hero { padding-top: 2rem; }
-      .hero-top { align-items: start; flex-direction: column; gap: .7rem; }
-      .hero-title { font-size: clamp(3.05rem, 15vw, 5.8rem); }
-      .hero-actions { display: grid; grid-template-columns: 1fr; }
-      .hero-image { min-height: 300px; height: 78vw; }
-      .section-head { display: block; }
-      .section-head .lead { margin-top: 1.3rem; }
-      .menu-grid { grid-template-columns: 1fr; }
-      .menu-card { min-height: 190px; }
-      .menu-foot, .reviews-top { align-items: start; flex-direction: column; }
-      .about-image, .about-image img { min-height: 300px; }
-      .gallery-grid { grid-template-columns: 1fr 1fr; grid-template-rows: 230px 160px; }
-      .gallery-item:first-child { grid-column: span 2; grid-row: auto; }
-      .review-placeholder { grid-template-columns: 1fr; }
-      .services-grid { grid-template-columns: 1fr 1fr; }
-      .service { min-height: 190px; padding: 1rem; }
-      .contact-row { grid-template-columns: 85px 1fr; }
-      .map-panel { min-height: 360px; }
-      .footer-main, .footer-bottom { flex-direction: column; }
-      .footer-links { gap: 1rem 1.2rem; }
+      :root {
+        --gutter: 1.15rem;
+      }
+
+      .nav {
+        min-height: 70px;
+      }
+
+      .nav-links {
+        inset-block-start: 70px;
+      }
+
+      .hero {
+        padding-top: 2rem;
+      }
+
+      .hero-top {
+        align-items: start;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: .7rem;
+      }
+
+      .hero-title {
+        font-size: clamp(3.05rem, 15vw, 5.8rem);
+      }
+
+      .hero-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
+      .hero-bottom {
+        justify-content: stretch;
+      }
+
+      .hero-image {
+        min-height: 300px;
+        height: 78vw;
+      }
+
+      .section-head {
+        display: block;
+      }
+
+      .menu-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .menu-card {
+        min-height: 190px;
+      }
+
+      .menu-foot,
+      .reviews-top {
+        align-items: start;
+        flex-direction: column;
+      }
+
+      .about-image,
+      .about-image img {
+        min-height: 300px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 230px 160px;
+      }
+
+      .gallery-item:first-child {
+        grid-column: span 2;
+        grid-row: auto;
+      }
+
+      .review-summary {
+        grid-template-columns: 1fr;
+      }
+
+      .review-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .services-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .service {
+        min-height: 150px;
+        padding: 1rem;
+      }
+
+      .contact-row {
+        grid-template-columns: 85px 1fr;
+      }
+
+      .map-panel {
+        min-height: 360px;
+      }
+
+      .footer-main,
+      .footer-bottom {
+        flex-direction: column;
+      }
+
+      .footer-links {
+        gap: 1rem 1.2rem;
+      }
+
+      .marquee-track {
+        animation-duration: 22s;
+      }
     }
+
     @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after { scroll-behavior: auto !important; animation-duration: .01ms !important; transition-duration: .01ms !important; }
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        animation-duration: .01ms !important;
+        transition-duration: .01ms !important;
+      }
     }
   </style>
 </head>
+
 <body>
+
   <header class="site-header">
     <nav class="nav wrap" aria-label="Navigazione principale">
       <a class="brand" href="#home" aria-label="Evergreen, torna all'inizio">EVERGREEN<sup>®</sup></a>
-      <button class="menu-toggle" id="menuToggle" aria-label="Apri il menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+
+      <button
+        class="menu-toggle"
+        id="menuToggle"
+        aria-label="Apri il menu"
+        aria-expanded="false"
+        aria-controls="navLinks"
+      >☰</button>
+
       <div class="nav-links" id="navLinks">
         <a href="#menu">Menù</a>
         <a href="#locale">Il locale</a>
         <a href="#gallery">Gallery</a>
         <a href="#recensioni">Recensioni</a>
         <a href="#contatti">Contatti</a>
-        <!-- TODO: sostituire # con il collegamento di prenotazione/ordini confermato -->
-        <a class="button nav-cta" href="#contatti">Prenota / ordina <span class="arrow">↗</span></a>
+        <a class="button nav-cta" href="tel:0119139117">
+          Prenota / ordina <span class="arrow">↗</span>
+        </a>
       </div>
     </nav>
   </header>
 
   <main>
+
+    <!-- HERO -->
+
     <section class="hero wrap" id="home">
+
       <div class="hero-top">
-        <p>Pizza · Cucina · Good times</p>
-        <p class="location"><span class="dot"></span> Brandizzo, Torino</p>
+        <p class="location">
+          <span class="dot"></span>
+          Brandizzo, Torino
+        </p>
       </div>
+
       <h1 class="hero-title">
-        <span>Non è solo</span>
-        <span>una pizza.</span>
-        <span class="accent">È il tuo posto.</span>
+        <span>Benvenuti</span>
+        <span class="accent">da Evergreen.</span>
       </h1>
+
       <div class="hero-bottom">
-        <p class="hero-copy">Un'identità forte, un'atmosfera accogliente, il piacere di stare insieme. Benvenuti da Evergreen.</p>
         <div class="hero-actions">
-          <a class="button button-primary" href="#menu">Scopri il menù <span class="arrow">↗</span></a>
-          <a class="button" href="#contatti">Vieni a trovarci <span class="arrow">↗</span></a>
+          <a class="button button-primary" href="#menu">
+            Menù <span class="arrow">↗</span>
+          </a>
+
+          <a class="button" href="#contatti">
+            Contatti <span class="arrow">↗</span>
+          </a>
         </div>
       </div>
+
       <div class="hero-image">
-        <!-- Sostituire con una foto originale: assets/evergreen-hero.jpg -->
-        <img src="assets/evergreen-hero.jpg" alt="Una delle pizze di Evergreen" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg,#d6d1c2,#a9ad91 55%,#555b43)'">
-        <span class="image-note">Fatto con cura. Servito con passione.</span>
+        <img
+          src="assets/evergreen-hero.jpg"
+          alt="Evergreen Brandizzo"
+          onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg,#d6d1c2,#a9ad91 55%,#555b43)'"
+        >
       </div>
-      <div class="hero-index"><span>Evergreen · Brandizzo</span><span>01 / 07</span></div>
+
+      <div class="hero-index">
+        <span>Evergreen · Brandizzo</span>
+        <span>01 / 07</span>
+      </div>
+
     </section>
+
+
+    <!-- MARQUEE -->
 
     <div class="marquee" aria-hidden="true">
       <div class="marquee-track">
-        <span>Pizza fatta con passione <b>✳</b></span><span>Good food, good people <b>✳</b></span><span>Ci vediamo a tavola <b>✳</b></span>
-        <span>Pizza fatta con passione <b>✳</b></span><span>Good food, good people <b>✳</b></span><span>Ci vediamo a tavola <b>✳</b></span>
+
+        <div class="marquee-group">
+          <span>Pizzeria <b>✳</b></span>
+          <span>Ristorante <b>✳</b></span>
+          <span>Bar <b>✳</b></span>
+        </div>
+
+        <div class="marquee-group">
+          <span>Pizzeria <b>✳</b></span>
+          <span>Ristorante <b>✳</b></span>
+          <span>Bar <b>✳</b></span>
+        </div>
+
       </div>
     </div>
+
+
+    <!-- MENU -->
 
     <section class="section menu-section" id="menu">
       <div class="wrap">
+
         <div class="section-head">
           <div>
             <p class="eyebrow">02 / Il menù</p>
-            <h2>Le cose<br>buone <span class="green-text">.</span></h2>
+            <h2>Il <span class="green-text">menù.</span></h2>
           </div>
-          <p class="lead">Dalla pizza alla cucina: qui troverai le proposte Evergreen, organizzate per aiutarti a scegliere con facilità.</p>
         </div>
+
         <div class="menu-grid">
+
           <a class="menu-card" href="#menulink">
             <span class="number">01 — PIZZERIA</span>
-            <div><h3>La nostra<br>pizza</h3><p>Classiche, speciali e le proposte da scoprire.</p></div>
+
+            <div>
+              <h3>La nostra<br>pizza</h3>
+            </div>
+
             <span class="arrow" aria-hidden="true">↗</span>
           </a>
+
           <a class="menu-card" href="#menulink">
             <span class="number">02 — CUCINA</span>
-            <div><h3>La cucina<br>Evergreen</h3><p>Piatti e sapori da condividere, a tavola.</p></div>
+
+            <div>
+              <h3>La cucina<br>Evergreen</h3>
+            </div>
+
             <span class="arrow" aria-hidden="true">↗</span>
           </a>
+
           <a class="menu-card" href="#menulink">
             <span class="number">03 — SFIZI</span>
-            <div><h3>Da iniziare<br>insieme</h3><p>Stuzzichini e sfizi per aprire le danze.</p></div>
+
+            <div>
+              <h3>Da iniziare<br>insieme</h3>
+            </div>
+
             <span class="arrow" aria-hidden="true">↗</span>
           </a>
+
           <a class="menu-card" href="#menulink">
             <span class="number">04 — DOLCI & DRINK</span>
-            <div><h3>Il finale<br>perfetto</h3><p>Dolci, bevande e qualcosa da brindare.</p></div>
+
+            <div>
+              <h3>Dolci<br>& drink</h3>
+            </div>
+
             <span class="arrow" aria-hidden="true">↗</span>
           </a>
+
         </div>
+
         <div class="menu-foot" id="menulink">
-          <p class="lead">Il menù completo e i prezzi saranno inseriti qui dopo la verifica della versione aggiornata.</p>
-          <!-- TODO: collegare al menu definitivo, PDF o pagina interna -->
-          <a class="button button-dark" href="#contatti">Chiedi il menù <span class="arrow">↗</span></a>
+          <a class="button button-dark" href="#contatti">
+            Chiedi il menù <span class="arrow">↗</span>
+          </a>
         </div>
+
       </div>
     </section>
+
+
+    <!-- LOCALE -->
 
     <section class="section" id="locale">
       <div class="wrap about-grid">
+
         <div class="about-image">
-          <!-- Sostituire con foto originale della sala: assets/evergreen-locale.jpg -->
-          <img src="assets/evergreen-locale.jpg" alt="Gli ambienti di Evergreen" loading="lazy" onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(145deg,#d8d4c8,#b7b9a8 60%,#737b5a)'">
+          <img
+            src="assets/evergreen-locale.jpg"
+            alt="Gli ambienti di Evergreen"
+            loading="lazy"
+            onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(145deg,#d8d4c8,#b7b9a8 60%,#737b5a)'"
+          >
         </div>
+
         <div class="about-copy">
           <p class="eyebrow">03 / Il locale</p>
-          <h2>Un posto<br>da <span class="green-text">vivere.</span></h2>
-          <p>Ci sono tavoli che diventano abitudini, pizze che fanno venire voglia di tornare e serate che meritano di essere condivise. Questa sezione racconterà la storia di Evergreen, la sua cucina e le persone che ogni giorno la rendono possibile.</p>
-          <p><strong>Da completare insieme:</strong> storia del locale, filosofia, persone e dettagli che lo rendono riconoscibile.</p>
-          <div class="about-stamp">Good<br>food<br>good mood</div>
+
+          <h2>
+            Evergreen<br>
+            <span class="green-text">Brandizzo.</span>
+          </h2>
+
+          <div class="about-stamp">
+            Good<br>
+            food<br>
+            good mood
+          </div>
         </div>
+
       </div>
     </section>
+
+
+    <!-- GALLERY -->
 
     <section class="section gallery-section" id="gallery">
       <div class="wrap">
+
         <div class="section-head">
           <div>
             <p class="eyebrow">04 / Gallery</p>
-            <h2>Uno sguardo<br><span class="green-text">dentro.</span></h2>
+            <h2>Evergreen<br><span class="green-text">in immagini.</span></h2>
           </div>
-          <p class="lead">Una selezione di immagini realizzate appositamente per il sito: piatti, dettagli, sala e momenti Evergreen.</p>
         </div>
+
         <div class="gallery-grid">
-          <div class="gallery-item"><img src="assets/gallery-pizza.jpg" alt="Pizza Evergreen" loading="lazy" onerror="this.style.display='none'"></div>
-          <div class="gallery-item"><img src="assets/gallery-dettaglio.jpg" alt="Un dettaglio della cucina" loading="lazy" onerror="this.style.display='none'"></div>
-          <div class="gallery-item"><img src="assets/gallery-locale.jpg" alt="Gli spazi del locale" loading="lazy" onerror="this.style.display='none'"></div>
-          <div class="gallery-item"><img src="assets/gallery-piatto.jpg" alt="Una proposta della cucina" loading="lazy" onerror="this.style.display='none'"></div>
-          <div class="gallery-item"><img src="assets/gallery-persone.jpg" alt="Un momento da Evergreen" loading="lazy" onerror="this.style.display='none'"></div>
+
+          <div class="gallery-item">
+            <img
+              src="assets/gallery-pizza.jpg"
+              alt="Pizza Evergreen"
+              loading="lazy"
+              onerror="this.style.display='none'"
+            >
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="assets/gallery-dettaglio.jpg"
+              alt="Un dettaglio della cucina"
+              loading="lazy"
+              onerror="this.style.display='none'"
+            >
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="assets/gallery-locale.jpg"
+              alt="Gli spazi del locale"
+              loading="lazy"
+              onerror="this.style.display='none'"
+            >
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="assets/gallery-piatto.jpg"
+              alt="Una proposta della cucina"
+              loading="lazy"
+              onerror="this.style.display='none'"
+            >
+          </div>
+
+          <div class="gallery-item">
+            <img
+              src="assets/gallery-persone.jpg"
+              alt="Evergreen Brandizzo"
+              loading="lazy"
+              onerror="this.style.display='none'"
+            >
+          </div>
+
         </div>
-        <div class="gallery-caption"><span>Evergreen, in immagini</span><span>05 scatti · Da aggiornare</span></div>
+
+        <div class="gallery-caption">
+          <span>Evergreen, Brandizzo</span>
+          <span>05 scatti</span>
+        </div>
+
       </div>
     </section>
+
+
+    <!-- RECENSIONI -->
 
     <section class="section" id="recensioni">
       <div class="wrap">
+
         <div class="section-head">
           <div>
             <p class="eyebrow">05 / Recensioni</p>
-            <h2>Parola a<br><span class="green-text">voi.</span></h2>
+            <h2>Google<br><span class="green-text">Reviews.</span></h2>
           </div>
-          <p class="lead">Le esperienze di chi è già passato da Evergreen, raccolte attraverso il profilo Google ufficiale.</p>
         </div>
+
         <div class="reviews-top">
-          <div class="google-mark"><span class="g" aria-hidden="true">G</span><span>Evergreen su Google</span></div>
-          <!-- TODO: inserire URL ufficiale del profilo Google Business -->
-          <a class="button" href="https://www.google.com/search?q=Evergreen+Brandizzo" target="_blank" rel="noopener noreferrer">Leggi le recensioni <span class="arrow">↗</span></a>
-        </div>
-        <div class="review-placeholder">
-          <div>
-            <h3>Le vostre parole,<br>senza filtri.</h3>
-            <p>Qui potremo mostrare una selezione di recensioni autentiche oppure integrare un widget compatibile. Le recensioni non saranno inventate o riscritte; l'integrazione automatica andrà verificata e configurata.</p>
+
+          <div class="google-mark">
+            <span class="g" aria-hidden="true">G</span>
+            <span>Evergreen su Google</span>
           </div>
-          <a class="button button-primary" href="https://www.google.com/search?q=Evergreen+Brandizzo" target="_blank" rel="noopener noreferrer">Vai a Google <span class="arrow">↗</span></a>
+
+          <a
+            class="button"
+            href="https://www.google.com/maps/search/?api=1&query=Evergreen+Brandizzo"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Leggi tutte <span class="arrow">↗</span>
+          </a>
+
         </div>
+
+        <div class="review-summary">
+
+          <div class="review-score">
+            4,5<small>/5</small>
+          </div>
+
+          <div>
+            <div class="review-stars">★★★★★</div>
+            <div class="review-meta">Circa 729 recensioni su Google</div>
+          </div>
+
+        </div>
+
+        <div class="review-grid">
+
+          <article class="review-card">
+
+            <div>
+              <div class="stars">★★★★★</div>
+
+              <blockquote>
+                “Il locale che non ti aspetti nel posto che non ti aspetti.”
+              </blockquote>
+            </div>
+
+            <div class="review-author">
+              <span>Lorenzo Doni</span>
+              <span>Google</span>
+            </div>
+
+          </article>
+
+
+          <article class="review-card">
+
+            <div>
+              <div class="stars">★★★★★</div>
+
+              <blockquote>
+                “Mai più senza Evergreen.”
+              </blockquote>
+            </div>
+
+            <div class="review-author">
+              <span>Marco Esposito</span>
+              <span>Google</span>
+            </div>
+
+          </article>
+
+
+          <article class="review-card">
+
+            <div>
+              <div class="stars">★★★★★</div>
+
+              <blockquote>
+                “Pizza eccezionale, impasto leggero, ingredienti di qualità.”
+              </blockquote>
+            </div>
+
+            <div class="review-author">
+              <span>Giò Bugni</span>
+              <span>Google</span>
+            </div>
+
+          </article>
+
+        </div>
+
       </div>
     </section>
+
+
+    <!-- SERVIZI -->
 
     <section class="section services-section" id="servizi">
       <div class="wrap">
+
         <div class="section-head">
           <div>
-            <p class="eyebrow">06 / Evergreen per te</p>
-            <h2>Tu scegli.<br><span>Al resto pensiamo.</span></h2>
+            <p class="eyebrow">06 / Servizi</p>
+            <h2>Evergreen<br><span>per te.</span></h2>
           </div>
-          <p class="lead">Informazioni chiare per vivere Evergreen come preferisci. Servizi e modalità saranno confermati prima della pubblicazione.</p>
         </div>
+
         <div class="services-grid">
-          <article class="service"><span class="service-icon" aria-hidden="true">↗</span><div><h3>Al tavolo</h3><p>Per goderti il locale e la cucina.</p></div></article>
-          <article class="service"><span class="service-icon" aria-hidden="true">＋</span><div><h3>Asporto</h3><p>Ordina e ritira, secondo le modalità disponibili.</p></div></article>
-          <article class="service"><span class="service-icon" aria-hidden="true">⌁</span><div><h3>Consegna</h3><p>Zone, orari e disponibilità da confermare.</p></div></article>
-          <article class="service"><span class="service-icon" aria-hidden="true">◎</span><div><h3>Prenotazioni</h3><p>Contattaci per informazioni e disponibilità.</p></div></article>
+
+          <article class="service">
+            <span class="service-icon" aria-hidden="true">↗</span>
+
+            <div>
+              <h3>Al tavolo</h3>
+            </div>
+          </article>
+
+          <article class="service">
+            <span class="service-icon" aria-hidden="true">＋</span>
+
+            <div>
+              <h3>Asporto</h3>
+            </div>
+          </article>
+
+          <article class="service">
+            <span class="service-icon" aria-hidden="true">⌁</span>
+
+            <div>
+              <h3>Consegna</h3>
+            </div>
+          </article>
+
+          <article class="service">
+            <span class="service-icon" aria-hidden="true">◎</span>
+
+            <div>
+              <h3>Prenotazioni</h3>
+            </div>
+          </article>
+
         </div>
+
       </div>
     </section>
+
+
+    <!-- CONTATTI -->
 
     <section class="section" id="contatti">
       <div class="wrap contact-grid">
+
         <div class="contact-copy">
+
           <p class="eyebrow">07 / Contatti</p>
-          <h2>Ci vediamo<br><span class="green-text">a tavola.</span></h2>
-          <p>Per prenotazioni, ordini e informazioni, usa i recapiti ufficiali qui sotto. Orari e dettagli verranno aggiornati con la famiglia prima della messa online.</p>
+
+          <h2>
+            Ci vediamo<br>
+            <span class="green-text">a tavola.</span>
+          </h2>
+
           <dl class="contact-list">
-            <div class="contact-row"><dt>Indirizzo</dt><dd><!-- TODO --> Inserire indirizzo verificato, Brandizzo (TO)</dd></div>
-            <div class="contact-row"><dt>Telefono</dt><dd><!-- TODO --> Inserire numero ufficiale</dd></div>
-            <div class="contact-row"><dt>Orari</dt><dd><!-- TODO --> Inserire giorni e orari aggiornati</dd></div>
-            <div class="contact-row"><dt>Social</dt><dd><!-- TODO --> Inserire Instagram / Facebook ufficiali</dd></div>
+
+            <div class="contact-row">
+              <dt>Indirizzo</dt>
+              <dd>
+                Via XX Settembre 35<br>
+                10032 Brandizzo (TO)
+              </dd>
+            </div>
+
+            <div class="contact-row">
+              <dt>Telefono</dt>
+              <dd>
+                <a href="tel:0119139117">011 913 9117</a>
+              </dd>
+            </div>
+
+            <div class="contact-row">
+              <dt>Orari</dt>
+              <dd>
+                Martedì – Domenica<br>
+                08:00–14:30 · 19:00–23:00<br>
+                Lunedì chiuso
+              </dd>
+            </div>
+
+            <div class="contact-row">
+              <dt>Google</dt>
+              <dd>
+                <a
+                  href="https://www.google.com/maps/search/?api=1&query=Evergreen+Brandizzo"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  Evergreen Brandizzo
+                </a>
+              </dd>
+            </div>
+
           </dl>
+
           <div class="hero-actions">
-            <!-- TODO: sostituire href con tel:+39... dopo aver confermato il numero -->
-            <a class="button button-primary" href="#contatti">Chiama / prenota <span class="arrow">↗</span></a>
-            <!-- TODO: sostituire con URL WhatsApp ufficiale, se utilizzato -->
-            <a class="button" href="#contatti">WhatsApp <span class="arrow">↗</span></a>
+
+            <a
+              class="button button-primary"
+              href="tel:0119139117"
+            >
+              Chiama / prenota <span class="arrow">↗</span>
+            </a>
+
+            <a
+              class="button"
+              href="https://www.google.com/maps/search/?api=1&query=Evergreen+Brandizzo"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Google Maps <span class="arrow">↗</span>
+            </a>
+
           </div>
+
         </div>
+
+
         <div class="map-panel">
-          <div class="map-art" aria-label="Segnaposto grafico per la mappa"><div class="map-pin"><span>●</span></div></div>
-          <div>
-            <p class="eyebrow">La posizione</p>
-            <h3>Evergreen<br>Brandizzo</h3>
-            <p>Apri Google Maps per pianificare il percorso. Il collegamento verrà aggiornato con la scheda esatta del locale.</p>
-            <!-- TODO: sostituire con il link Google Maps della sede esatta -->
-            <a class="button button-dark" href="https://www.google.com/maps/search/?api=1&query=Evergreen+Brandizzo" target="_blank" rel="noopener noreferrer">Apri Google Maps <span class="arrow">↗</span></a>
+
+          <div
+            class="map-art"
+            aria-label="Posizione di Evergreen Brandizzo"
+          >
+            <div class="map-pin">
+              <span>●</span>
+            </div>
           </div>
+
+          <div>
+
+            <p class="eyebrow">La posizione</p>
+
+            <h3>
+              Evergreen<br>
+              Brandizzo
+            </h3>
+
+            <p>
+              Via XX Settembre 35<br>
+              10032 Brandizzo (TO)
+            </p>
+
+            <a
+              class="button button-dark"
+              href="https://www.google.com/maps/search/?api=1&query=Evergreen+Brandizzo"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Apri Google Maps <span class="arrow">↗</span>
+            </a>
+
+          </div>
+
         </div>
+
       </div>
     </section>
+
   </main>
+
+
+  <!-- FOOTER -->
 
   <footer class="footer">
     <div class="wrap">
+
       <div class="footer-main">
+
         <div>
-          <a class="brand" href="#home">EVERGREEN<sup>®</sup></a>
-          <p>Pizza, cucina e good times.<br>Ci vediamo a tavola.</p>
+          <a class="brand" href="#home">
+            EVERGREEN<sup>®</sup>
+          </a>
         </div>
+
         <div class="footer-links">
-          <a href="#menu">Menù</a><a href="#locale">Il locale</a><a href="#gallery">Gallery</a>
-          <a href="#recensioni">Recensioni</a><a href="#contatti">Contatti</a>
-          <!-- TODO: aggiungere pagine privacy/cookie e dati societari se necessari -->
+          <a href="#menu">Menù</a>
+          <a href="#locale">Il locale</a>
+          <a href="#gallery">Gallery</a>
+          <a href="#recensioni">Recensioni</a>
+          <a href="#contatti">Contatti</a>
         </div>
+
       </div>
+
       <div class="footer-bottom">
-        <span>© <span id="year"></span> Evergreen Brandizzo. Tutti i diritti riservati.</span>
-        <span>Sito in aggiornamento · Informazioni da confermare</span>
+        <span>
+          © <span id="year"></span> Evergreen Brandizzo. Tutti i diritti riservati.
+        </span>
       </div>
+
     </div>
   </footer>
+
 
   <script>
     const menuToggle = document.getElementById("menuToggle");
@@ -521,23 +1578,49 @@
 
     menuToggle.addEventListener("click", () => {
       const isOpen = navLinks.classList.toggle("is-open");
+
       document.body.classList.toggle("menu-open", isOpen);
-      menuToggle.setAttribute("aria-expanded", String(isOpen));
-      menuToggle.setAttribute("aria-label", isOpen ? "Chiudi il menu" : "Apri il menu");
+
+      menuToggle.setAttribute(
+        "aria-expanded",
+        String(isOpen)
+      );
+
+      menuToggle.setAttribute(
+        "aria-label",
+        isOpen ? "Chiudi il menu" : "Apri il menu"
+      );
+
       menuToggle.textContent = isOpen ? "×" : "☰";
     });
 
+
     navLinks.querySelectorAll("a").forEach(link => {
       link.addEventListener("click", () => {
+
         navLinks.classList.remove("is-open");
+
         document.body.classList.remove("menu-open");
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.setAttribute("aria-label", "Apri il menu");
+
+        menuToggle.setAttribute(
+          "aria-expanded",
+          "false"
+        );
+
+        menuToggle.setAttribute(
+          "aria-label",
+          "Apri il menu"
+        );
+
         menuToggle.textContent = "☰";
+
       });
     });
 
-    document.getElementById("year").textContent = new Date().getFullYear();
+
+    document.getElementById("year").textContent =
+      new Date().getFullYear();
   </script>
+
 </body>
 </html>
