@@ -40,7 +40,9 @@
       -webkit-font-smoothing: antialiased;
     }
 
-    body.menu-open { overflow: hidden; }
+    body.menu-open {
+      overflow: hidden;
+    }
 
     img {
       display: block;
@@ -52,7 +54,8 @@
       text-decoration: none;
     }
 
-    button, a {
+    button,
+    a {
       -webkit-tap-highlight-color: transparent;
     }
 
@@ -100,11 +103,18 @@
       margin-bottom: clamp(2rem, 5vw, 3.5rem);
     }
 
-    h1, h2, h3, p {
+    h1,
+    h2,
+    h3,
+    p {
       margin-top: 0;
     }
 
-    h1, h2, h3, .brand, .display {
+    h1,
+    h2,
+    h3,
+    .brand,
+    .display {
       font-family: "Space Grotesk", sans-serif;
       letter-spacing: -.055em;
     }
@@ -594,7 +604,7 @@
 
     .review-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: .8rem;
       margin-top: 1rem;
     }
@@ -817,6 +827,7 @@
     }
 
     @media (max-width: 900px) {
+
       .nav-links {
         position: fixed;
         inset: 78px 0 auto;
@@ -866,13 +877,10 @@
       .gallery-grid {
         grid-template-rows: 190px 190px;
       }
-
-      .review-grid {
-        grid-template-columns: 1fr 1fr;
-      }
     }
 
     @media (max-width: 600px) {
+
       :root {
         --gutter: 1.15rem;
       }
@@ -1002,7 +1010,10 @@
 
   <header class="site-header">
     <nav class="nav wrap" aria-label="Navigazione principale">
-      <a class="brand" href="#home" aria-label="Evergreen, torna all'inizio">EVERGREEN<sup>®</sup></a>
+
+      <a class="brand" href="#home" aria-label="Evergreen, torna all'inizio">
+        EVERGREEN<sup>®</sup>
+      </a>
 
       <button
         class="menu-toggle"
@@ -1013,17 +1024,21 @@
       >☰</button>
 
       <div class="nav-links" id="navLinks">
+
         <a href="#menu">Menù</a>
         <a href="#locale">Il locale</a>
         <a href="#gallery">Gallery</a>
         <a href="#recensioni">Recensioni</a>
         <a href="#contatti">Contatti</a>
+
         <a class="button nav-cta" href="tel:0119139117">
           Prenota / ordina <span class="arrow">↗</span>
         </a>
+
       </div>
     </nav>
   </header>
+
 
   <main>
 
@@ -1044,7 +1059,9 @@
       </h1>
 
       <div class="hero-bottom">
+
         <div class="hero-actions">
+
           <a class="button button-primary" href="#menu">
             Menù <span class="arrow">↗</span>
           </a>
@@ -1052,15 +1069,19 @@
           <a class="button" href="#contatti">
             Contatti <span class="arrow">↗</span>
           </a>
+
         </div>
+
       </div>
 
       <div class="hero-image">
+
         <img
           src="assets/evergreen-hero.jpg"
           alt="Evergreen Brandizzo"
           onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(135deg,#d6d1c2,#a9ad91 55%,#555b43)'"
         >
+
       </div>
 
       <div class="hero-index">
@@ -1074,39 +1095,49 @@
     <!-- MARQUEE -->
 
     <div class="marquee" aria-hidden="true">
+
       <div class="marquee-track">
 
         <div class="marquee-group">
-          <span>Pizzeria <b>✳</b></span>
-          <span>Ristorante <b>✳</b></span>
-          <span>Bar <b>✳</b></span>
+          <span>Best food ever <b>✳</b></span>
+          <span>Best food ever <b>✳</b></span>
+          <span>Best food ever <b>✳</b></span>
         </div>
 
         <div class="marquee-group">
-          <span>Pizzeria <b>✳</b></span>
-          <span>Ristorante <b>✳</b></span>
-          <span>Bar <b>✳</b></span>
+          <span>Best food ever <b>✳</b></span>
+          <span>Best food ever <b>✳</b></span>
+          <span>Best food ever <b>✳</b></span>
         </div>
 
       </div>
+
     </div>
 
 
     <!-- MENU -->
 
     <section class="section menu-section" id="menu">
+
       <div class="wrap">
 
         <div class="section-head">
+
           <div>
             <p class="eyebrow">02 / Il menù</p>
-            <h2>Il <span class="green-text">menù.</span></h2>
+
+            <h2>
+              Il <span class="green-text">menù.</span>
+            </h2>
           </div>
+
         </div>
+
 
         <div class="menu-grid">
 
           <a class="menu-card" href="#menulink">
+
             <span class="number">01 — PIZZERIA</span>
 
             <div>
@@ -1114,9 +1145,12 @@
             </div>
 
             <span class="arrow" aria-hidden="true">↗</span>
+
           </a>
 
+
           <a class="menu-card" href="#menulink">
+
             <span class="number">02 — CUCINA</span>
 
             <div>
@@ -1124,9 +1158,12 @@
             </div>
 
             <span class="arrow" aria-hidden="true">↗</span>
+
           </a>
 
+
           <a class="menu-card" href="#menulink">
+
             <span class="number">03 — SFIZI</span>
 
             <div>
@@ -1134,9 +1171,12 @@
             </div>
 
             <span class="arrow" aria-hidden="true">↗</span>
+
           </a>
 
+
           <a class="menu-card" href="#menulink">
+
             <span class="number">04 — DOLCI & DRINK</span>
 
             <div>
@@ -1144,35 +1184,45 @@
             </div>
 
             <span class="arrow" aria-hidden="true">↗</span>
+
           </a>
 
         </div>
 
+
         <div class="menu-foot" id="menulink">
+
           <a class="button button-dark" href="#contatti">
             Chiedi il menù <span class="arrow">↗</span>
           </a>
+
         </div>
 
       </div>
+
     </section>
 
 
     <!-- LOCALE -->
 
     <section class="section" id="locale">
+
       <div class="wrap about-grid">
 
         <div class="about-image">
+
           <img
             src="assets/evergreen-locale.jpg"
             alt="Gli ambienti di Evergreen"
             loading="lazy"
             onerror="this.style.display='none'; this.parentElement.style.background='linear-gradient(145deg,#d8d4c8,#b7b9a8 60%,#737b5a)'"
           >
+
         </div>
 
+
         <div class="about-copy">
+
           <p class="eyebrow">03 / Il locale</p>
 
           <h2>
@@ -1185,23 +1235,35 @@
             food<br>
             good mood
           </div>
+
         </div>
 
       </div>
+
     </section>
 
 
     <!-- GALLERY -->
 
     <section class="section gallery-section" id="gallery">
+
       <div class="wrap">
 
         <div class="section-head">
+
           <div>
+
             <p class="eyebrow">04 / Gallery</p>
-            <h2>Evergreen<br><span class="green-text">in immagini.</span></h2>
+
+            <h2>
+              Evergreen<br>
+              <span class="green-text">in immagini.</span>
+            </h2>
+
           </div>
+
         </div>
+
 
         <div class="gallery-grid">
 
@@ -1252,33 +1314,49 @@
 
         </div>
 
+
         <div class="gallery-caption">
           <span>Evergreen, Brandizzo</span>
           <span>05 scatti</span>
         </div>
 
       </div>
+
     </section>
 
 
     <!-- RECENSIONI -->
 
     <section class="section" id="recensioni">
+
       <div class="wrap">
 
         <div class="section-head">
+
           <div>
+
             <p class="eyebrow">05 / Recensioni</p>
-            <h2>Google<br><span class="green-text">Reviews.</span></h2>
+
+            <h2>
+              Google<br>
+              <span class="green-text">Reviews.</span>
+            </h2>
+
           </div>
+
         </div>
+
 
         <div class="reviews-top">
 
           <div class="google-mark">
+
             <span class="g" aria-hidden="true">G</span>
+
             <span>Evergreen su Google</span>
+
           </div>
+
 
           <a
             class="button"
@@ -1291,6 +1369,7 @@
 
         </div>
 
+
         <div class="review-summary">
 
           <div class="review-score">
@@ -1298,22 +1377,35 @@
           </div>
 
           <div>
-            <div class="review-stars">★★★★★</div>
-            <div class="review-meta">Circa 729 recensioni su Google</div>
+
+            <div class="review-stars">
+              ★★★★★
+            </div>
+
+            <div class="review-meta">
+              727 recensioni su Google
+            </div>
+
           </div>
 
         </div>
 
+
         <div class="review-grid">
+
 
           <article class="review-card">
 
             <div>
-              <div class="stars">★★★★★</div>
+
+              <div class="stars">
+                ★★★★★
+              </div>
 
               <blockquote>
                 “Il locale che non ti aspetti nel posto che non ti aspetti.”
               </blockquote>
+
             </div>
 
             <div class="review-author">
@@ -1327,11 +1419,15 @@
           <article class="review-card">
 
             <div>
-              <div class="stars">★★★★★</div>
+
+              <div class="stars">
+                ★★★★★
+              </div>
 
               <blockquote>
                 “Mai più senza Evergreen.”
               </blockquote>
+
             </div>
 
             <div class="review-author">
@@ -1342,124 +1438,169 @@
           </article>
 
 
-          <article class="review-card">
-
-            <div>
-              <div class="stars">★★★★★</div>
-
-              <blockquote>
-                “Pizza eccezionale, impasto leggero, ingredienti di qualità.”
-              </blockquote>
-            </div>
-
-            <div class="review-author">
-              <span>Giò Bugni</span>
-              <span>Google</span>
-            </div>
-
-          </article>
-
         </div>
 
       </div>
+
     </section>
 
 
     <!-- SERVIZI -->
 
     <section class="section services-section" id="servizi">
+
       <div class="wrap">
 
         <div class="section-head">
+
           <div>
+
             <p class="eyebrow">06 / Servizi</p>
-            <h2>Evergreen<br><span>per te.</span></h2>
+
+            <h2>
+              Evergreen<br>
+              <span>per te.</span>
+            </h2>
+
           </div>
+
         </div>
+
 
         <div class="services-grid">
 
           <article class="service">
-            <span class="service-icon" aria-hidden="true">↗</span>
+
+            <span class="service-icon" aria-hidden="true">
+              ↗
+            </span>
 
             <div>
               <h3>Al tavolo</h3>
             </div>
+
           </article>
 
+
           <article class="service">
-            <span class="service-icon" aria-hidden="true">＋</span>
+
+            <span class="service-icon" aria-hidden="true">
+              ＋
+            </span>
 
             <div>
               <h3>Asporto</h3>
             </div>
+
           </article>
 
+
           <article class="service">
-            <span class="service-icon" aria-hidden="true">⌁</span>
+
+            <span class="service-icon" aria-hidden="true">
+              ⌁
+            </span>
 
             <div>
               <h3>Consegna</h3>
             </div>
+
           </article>
 
+
           <article class="service">
-            <span class="service-icon" aria-hidden="true">◎</span>
+
+            <span class="service-icon" aria-hidden="true">
+              ◎
+            </span>
 
             <div>
               <h3>Prenotazioni</h3>
             </div>
+
           </article>
 
         </div>
 
       </div>
+
     </section>
 
 
     <!-- CONTATTI -->
 
     <section class="section" id="contatti">
+
       <div class="wrap contact-grid">
+
 
         <div class="contact-copy">
 
-          <p class="eyebrow">07 / Contatti</p>
+          <p class="eyebrow">
+            07 / Contatti
+          </p>
 
           <h2>
             Ci vediamo<br>
             <span class="green-text">a tavola.</span>
           </h2>
 
+
           <dl class="contact-list">
 
+
             <div class="contact-row">
-              <dt>Indirizzo</dt>
+
+              <dt>
+                Indirizzo
+              </dt>
+
               <dd>
                 Via XX Settembre 35<br>
                 10032 Brandizzo (TO)
               </dd>
+
             </div>
 
+
             <div class="contact-row">
-              <dt>Telefono</dt>
+
+              <dt>
+                Telefono
+              </dt>
+
               <dd>
-                <a href="tel:0119139117">011 913 9117</a>
+                <a href="tel:0119139117">
+                  011 913 9117
+                </a>
               </dd>
+
             </div>
 
+
             <div class="contact-row">
-              <dt>Orari</dt>
+
+              <dt>
+                Orari
+              </dt>
+
               <dd>
                 Martedì – Domenica<br>
                 08:00–14:30 · 19:00–23:00<br>
                 Lunedì chiuso
               </dd>
+
             </div>
 
+
             <div class="contact-row">
-              <dt>Google</dt>
+
+              <dt>
+                Google
+              </dt>
+
               <dd>
+
                 <a
                   href="https://www.google.com/maps/search/?api=1&query=Evergreen+Brandizzo"
                   target="_blank"
@@ -1467,19 +1608,26 @@
                 >
                   Evergreen Brandizzo
                 </a>
+
               </dd>
+
             </div>
+
 
           </dl>
 
+
           <div class="hero-actions">
+
 
             <a
               class="button button-primary"
               href="tel:0119139117"
             >
-              Chiama / prenota <span class="arrow">↗</span>
+              Chiama / prenota
+              <span class="arrow">↗</span>
             </a>
+
 
             <a
               class="button"
@@ -1487,8 +1635,10 @@
               target="_blank"
               rel="noopener noreferrer"
             >
-              Google Maps <span class="arrow">↗</span>
+              Google Maps
+              <span class="arrow">↗</span>
             </a>
+
 
           </div>
 
@@ -1497,18 +1647,24 @@
 
         <div class="map-panel">
 
+
           <div
             class="map-art"
             aria-label="Posizione di Evergreen Brandizzo"
           >
+
             <div class="map-pin">
               <span>●</span>
             </div>
+
           </div>
+
 
           <div>
 
-            <p class="eyebrow">La posizione</p>
+            <p class="eyebrow">
+              La posizione
+            </p>
 
             <h3>
               Evergreen<br>
@@ -1520,20 +1676,24 @@
               10032 Brandizzo (TO)
             </p>
 
+
             <a
               class="button button-dark"
               href="https://www.google.com/maps/search/?api=1&query=Evergreen+Brandizzo"
               target="_blank"
               rel="noopener noreferrer"
             >
-              Apri Google Maps <span class="arrow">↗</span>
+              Apri Google Maps
+              <span class="arrow">↗</span>
             </a>
 
           </div>
 
         </div>
 
+
       </div>
+
     </section>
 
   </main>
@@ -1542,44 +1702,63 @@
   <!-- FOOTER -->
 
   <footer class="footer">
+
     <div class="wrap">
 
       <div class="footer-main">
 
         <div>
+
           <a class="brand" href="#home">
             EVERGREEN<sup>®</sup>
           </a>
+
         </div>
 
+
         <div class="footer-links">
+
           <a href="#menu">Menù</a>
           <a href="#locale">Il locale</a>
           <a href="#gallery">Gallery</a>
           <a href="#recensioni">Recensioni</a>
           <a href="#contatti">Contatti</a>
+
         </div>
 
       </div>
 
+
       <div class="footer-bottom">
+
         <span>
-          © <span id="year"></span> Evergreen Brandizzo. Tutti i diritti riservati.
+          © <span id="year"></span>
+          Evergreen Brandizzo.
+          Tutti i diritti riservati.
         </span>
+
       </div>
 
     </div>
+
   </footer>
 
 
   <script>
+
     const menuToggle = document.getElementById("menuToggle");
     const navLinks = document.getElementById("navLinks");
 
-    menuToggle.addEventListener("click", () => {
-      const isOpen = navLinks.classList.toggle("is-open");
 
-      document.body.classList.toggle("menu-open", isOpen);
+    menuToggle.addEventListener("click", () => {
+
+      const isOpen =
+        navLinks.classList.toggle("is-open");
+
+      document.body.classList.toggle(
+        "menu-open",
+        isOpen
+      );
 
       menuToggle.setAttribute(
         "aria-expanded",
@@ -1588,14 +1767,19 @@
 
       menuToggle.setAttribute(
         "aria-label",
-        isOpen ? "Chiudi il menu" : "Apri il menu"
+        isOpen
+          ? "Chiudi il menu"
+          : "Apri il menu"
       );
 
-      menuToggle.textContent = isOpen ? "×" : "☰";
+      menuToggle.textContent =
+        isOpen ? "×" : "☰";
+
     });
 
 
     navLinks.querySelectorAll("a").forEach(link => {
+
       link.addEventListener("click", () => {
 
         navLinks.classList.remove("is-open");
@@ -1615,11 +1799,13 @@
         menuToggle.textContent = "☰";
 
       });
+
     });
 
 
     document.getElementById("year").textContent =
       new Date().getFullYear();
+
   </script>
 
 </body>
